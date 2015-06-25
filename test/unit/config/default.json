@@ -1,0 +1,10 @@
+{
+  // This is a comment
+  "key1": {
+    "key1_1": "value1_1",
+    "key1_2": true
+  },
+  /* This is another comment */
+  "key2": "value2",
+  "key10": "value10"
+}
