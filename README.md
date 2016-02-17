@@ -1,6 +1,6 @@
 # merge-config
 
-Merge multiple configuration sources: JSON files and environment properties.
+Merge multiple configuration sources: configuration files (json and yaml), command-line arguments, and environment properties.
 
 [![npm version](https://badge.fury.io/js/merge-config.svg)](http://badge.fury.io/js/merge-config)
 [![Build Status](https://travis-ci.org/telefonica/node-merge-config.svg)](https://travis-ci.org/telefonica/node-merge-config)
@@ -10,12 +10,12 @@ It is inspired on [nconf](https://github.com/indexzero/nconf) library, offering 
 
 * The order of preference is reversed. For example, the default values have to be merged before the custom values so that custom values overwrite the default ones.
 * Support for multiple instances. It is possible to handle several configurations (e.g. to handle the configuration of several plugins independently).
-* Both json and yaml formats are supported when merging configuration files.
+* Both **json** and **yaml** formats are supported when merging configuration files.
 * It is possible to merge a directory of configuration files, merging each configuration file alphabetically.
-* JSON files can include comments.
+* JSON files are parsed with [hjson](http://hjson.org/) to support comments.
 * The environment variable names are converted into camelCase when merging them into the configuration. The goal is to have a common notation with keys in JSON documents.
 
-This module works with a single configuration object. This configuration object is updated with each merge (with preference for the last merge over the first one). It is inspired in [Object.assign(target, ...sources)](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) but with a main difference; `Object.assign` replaces subelements while merge-config also merges subelements when they are objects. This approach is useful to merge a default configuration with a custom configuration where only the configuration properties to be modified are included.
+This module works with a single configuration object. This configuration object is updated with each merge (with preference for the last merge over the first one). The recursive merge is implemented with [lodash](https://lodash.com/docs#merge). This approach is useful to merge a default configuration with a custom configuration where only the configuration properties to be modified are included.
 
 For example, with the following default configuration:
 

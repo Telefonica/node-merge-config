@@ -46,7 +46,7 @@
     "hjson": "^1.6.1",
     "js-yaml": "3.5.3",
     "therror": "^0.2.0",
-    "underscore": "1.8.3"
+    "lodash": "^4.5.0"
   },
   "keywords": [
     "configuration"
