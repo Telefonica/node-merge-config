@@ -63,7 +63,7 @@ config.file(process.env.CONFIG_DIR);
 // Add a command-line argument.
 config.argv(['logFormat']);
 // Add an environment variable (LOG_LEVEL).
-config.env(['logLevel']);
+config.env(['LOG_LEVEL']);
 
 // Get the whole merged configuration
 console.log("Merged configuration: %j", config.get());
@@ -138,7 +138,7 @@ It is possible to restrict which environment variables are to be added to the co
 
 ```js
 // Add only environment variables: LOG_LEVEL and PORT
-config.env(['logLevel', 'port']);
+config.env(['LOG_LEVEL', 'PORT']);
 ```
 
 The keys from environment variables are transformed into camelCase to keep coherence with JSON format.
@@ -156,7 +156,7 @@ It is possible to restrict which command-line arguments are to be added to the c
 
 ```js
 // Add only environment variables: logLevel and port
-config.env(['logLevel', 'port']);
+config.argv(['logLevel', 'port']);
 ```
 
 ### file(path)

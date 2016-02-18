@@ -70,7 +70,7 @@ describe('Configuration Tests', function() {
     process.env['MONGO:URL_CONNECTION'] = 'mongodb://localhost:27017';
     process.env.NOT_REQUIRED = 'not required value';
     var config = new Configuration();
-    config.env(['configFile', 'configDir', 'mongo:urlConnection']);
+    config.env(['CONFIG_FILE', 'CONFIG_DIR', 'MONGO:URL_CONNECTION']);
     expect(config.get()).to.be.deep.equal({
       configFile: '/etc/project/config.json',
       configDir: '/etc/project',
@@ -159,7 +159,7 @@ describe('Configuration Tests', function() {
     });
     process.env.KEY3 = 'value updated from env var';
     process.env.NEW_VAR = 'New env var';
-    config.env(['key3', 'newVar']);
+    config.env(['KEY3', 'NEW_VAR']);
     expect(config.get()).to.be.deep.equal({
       key1: {
         key1_1: 'value modified by yaml',
