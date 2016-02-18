@@ -1,7 +1,7 @@
 {
   "name": "merge-config",
   "description": "Merge multiple configuration sources: JSON files and environment properties",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "Apache-2.0",
   "author": {
     "name": "Jorge Lorenzo Gallardo",
@@ -42,9 +42,11 @@
   },
   "dependencies": {
     "change-case": "^2.2.0",
+    "yargs": "^4.1.0",
     "hjson": "^1.6.1",
-    "nconf": "^0.7.1",
-    "therror": "^0.2.0"
+    "js-yaml": "3.5.3",
+    "therror": "^0.2.0",
+    "lodash": "^4.5.0"
   },
   "keywords": [
     "configuration"
